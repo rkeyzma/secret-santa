@@ -2,67 +2,157 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Merry Christmas 🎄</title>
+  <title>Merry Christmas Ate Jane 🎄</title>
+
   <style>
     body {
-      background: linear-gradient(to bottom, #c62828, #2e7d32);
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #b71c1c, #1b5e20);
       color: white;
       text-align: center;
-      padding: 40px;
+      overflow: hidden;
     }
+
     .card {
       background: rgba(255,255,255,0.15);
       border-radius: 20px;
       padding: 30px;
-      max-width: 500px;
-      margin: auto;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      max-width: 520px;
+      margin: 80px auto;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+      position: relative;
+      z-index: 2;
     }
+
     h1 {
-      font-size: 2.5em;
+      font-size: 2.4em;
       margin-bottom: 10px;
     }
+
+    h2 {
+      margin-top: 0;
+      font-weight: normal;
+    }
+
     p {
-      font-size: 1.2em;
+      font-size: 1.15em;
       line-height: 1.6;
     }
-    .gift {
-      font-size: 3em;
-      margin: 20px 0;
+
+    .gift-btn {
+      background: #ffeb3b;
+      color: #000;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-weight: bold;
     }
+
+    .gift-btn:hover {
+      background: #fff176;
+    }
+
+    .gift-message {
+      display: none;
+      margin-top: 25px;
+      font-size: 1.15em;
+      background: rgba(0,0,0,0.25);
+      padding: 20px;
+      border-radius: 15px;
+    }
+
     footer {
       margin-top: 25px;
       font-style: italic;
       opacity: 0.9;
     }
+
+    /* Snow */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: white;
+      font-size: 1em;
+      user-select: none;
+      animation-name: fall;
+      animation-timing-function: linear;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <div class="card">
-    <h1>🎄 Merry Christmas! 🎄</h1>
-
-    <div class="gift">🎁</div>
+    <h1>🎄 Merry Christmas 🎄</h1>
+    <h2>Ate Jane 😄</h2>
 
     <p>
-      This little message is sent with warmth, smiles,  
-      and Christmas cheer ✨
+      Ho ho ho! 🎅  
+      Your Secret Santa was clearly forced to behave nicely this Christmas.
     </p>
 
     <p>
-      May your holidays be filled with joy, peace,  
-      and happy moments 🎅❄️
+      As your *totally responsible* Secret Santa (and definitely not
+      an annoying sibling), I just want to say:
     </p>
 
     <p>
-      Someone out there is thinking of you this Christmas ❤️
+      Thank you for being the kind of Ate who scolds, helps,
+      laughs, and somehow still tolerates nonsense 😂
     </p>
+
+    <button class="gift-btn" onclick="revealGift()">
+      🎁 Click to reveal your gift
+    </button>
+
+    <div class="gift-message" id="gift">
+      <p>
+        Surprise!!! 🎉  
+        Your real gift might be small, digital, or still on the way…
+      </p>
+
+      <p>
+        But this message comes with unlimited blessings,
+        zero returns, and lifetime sibling annoyance 💖
+      </p>
+
+      <p>
+        Stay awesome, stay healthy,
+        and don’t forget — I’m your favorite Secret Santa 🤫😌
+      </p>
+    </div>
 
     <footer>
-      — Your Secret Santa 🤫🎅
+      — Your Secret Santa (aka your Christmas sibling 🤍)
     </footer>
   </div>
+
+  <script>
+    function revealGift() {
+      document.getElementById("gift").style.display = "block";
+    }
+
+    // Snow generator
+    for (let i = 0; i < 50; i++) {
+      let snow = document.createElement("div");
+      snow.className = "snowflake";
+      snow.innerHTML = "❄️";
+      snow.style.left = Math.random() * 100 + "vw";
+      snow.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      snow.style.fontSize = (Math.random() * 10 + 10) + "px";
+      document.body.appendChild(snow);
+    }
+  </script>
 
 </body>
 </html>
